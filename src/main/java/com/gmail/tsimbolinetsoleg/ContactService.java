@@ -81,8 +81,4 @@ public class ContactService {
         return orderRepository.count();
     }
 
-    @Transactional(readOnly=true)
-    public List<Order> findOrders() {
-        return orderRepository.findAll();
-    }
 }

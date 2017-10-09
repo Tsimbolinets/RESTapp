@@ -19,8 +19,8 @@ public class RestappiApplication {
 		return new CommandLineRunner() {
 			@Override
 			public void run(String... strings) throws Exception {
-				DBEntitys zulul = new DBEntitys();
-				contactService.addOrder(zulul.addtoDB());
+				DBEntitys dbEntitys = new DBEntitys();
+				contactService.addOrder(dbEntitys.addtoDB());
 			}
 		};
 	}

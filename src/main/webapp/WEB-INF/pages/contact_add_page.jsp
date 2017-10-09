@@ -1,0 +1,30 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+    <head>
+        <title>New Contact</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <h3 align="center">Contact add page</h3>
+        <div class="container">
+            <form role="form" class="form-horizontal" action="/contact/add" method="post">
+                        <h3>New contact</h3>
+                        <input class="form-control form-group" type="text" name="name" placeholder="Name">
+                        <input class="form-control form-group" type="text" name="surname" placeholder="Short description">
+                <select class="selectpicker form-control form-group" name="sex">
+                    <option>female</option>
+                    <option>man</option>
+                </select>
+                        <input class="form-control form-group" type="text" name="birthday" placeholder="Birthday">
+                        <input class="form-control form-group" type="text" name="identnumber" placeholder="Identify number">
+                    <input type="submit" class="btn btn-primary" value="Add">
+            </form>
+        </div>
+    <h3 align="center"><a href="/" >Main page</a></h3>
+        <script>
+            $('.selectpicker').selectpicker();
+        </script>
+    </body>
+</html>

@@ -28,7 +28,6 @@
         </div>
         <h3 align="center"><a href="/" >Main page</a></h3>
         <script>
-
             $('.selectpicker').selectpicker();
         </script>
     </body>

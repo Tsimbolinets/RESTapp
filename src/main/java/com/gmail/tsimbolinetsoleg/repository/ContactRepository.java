@@ -1,5 +1,6 @@
-package com.gmail.tsimbolinetsoleg;
+package com.gmail.tsimbolinetsoleg.repository;
 
+import com.gmail.tsimbolinetsoleg.domain.Contact;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

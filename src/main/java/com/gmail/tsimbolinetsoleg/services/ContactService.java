@@ -1,5 +1,9 @@
-package com.gmail.tsimbolinetsoleg;
+package com.gmail.tsimbolinetsoleg.services;
 
+import com.gmail.tsimbolinetsoleg.domain.Contact;
+import com.gmail.tsimbolinetsoleg.domain.Order;
+import com.gmail.tsimbolinetsoleg.repository.ContactRepository;
+import com.gmail.tsimbolinetsoleg.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -14,11 +18,6 @@ public class ContactService {
     private ContactRepository contactRepository;
     @Autowired
     private OrderRepository orderRepository;
-
-    @Transactional
-    public void addContacts(List<Contact> contact) {
-        contactRepository.save(contact);
-    }
 
     @Transactional
     public void addContact(Contact contact) {
@@ -36,16 +35,6 @@ public class ContactService {
     }
 
     @Transactional
-    public List<Order> findAllOrders(Pageable pageable) {
-        return orderRepository.findAll(pageable).getContent();
-    }
-
-    @Transactional
-    public void addOrder(List<Order> order) {
-        orderRepository.save(order);
-    }
-
-    @Transactional
     public Integer setById(String surname, String sex, String birthday, String identnumber, long id) { return contactRepository.setById(surname,sex,birthday,identnumber,id);
     }
 
@@ -54,7 +43,6 @@ public class ContactService {
         for (long id : idList)
             contactRepository.delete(id);
     }
-
 
     @Transactional(readOnly=true)
     public List<Contact> findByPattern(String pattern, Pageable pageable) {
@@ -66,9 +54,25 @@ public class ContactService {
         return contactRepository.findById(id, pageable);
     }
 
+
+    @Transactional
+    public List<Order> findAllOrders(Pageable pageable) {
+        return orderRepository.findAll(pageable).getContent();
+    }
+
+    @Transactional
+    public void addOrder(List<Order> order) {
+        orderRepository.save(order);
+    }
+
     @Transactional(readOnly=true)
     public List<Order> findByPatternOrders(String pattern, Pageable pageable) {
         return orderRepository.findByPatternOrders(pattern, pageable);
+    }
+
+    @Transactional(readOnly = true)
+    public long countOrders() {
+        return orderRepository.count();
     }
 
     @Transactional(readOnly = true)
@@ -76,9 +80,6 @@ public class ContactService {
         return contactRepository.count();
     }
 
-    @Transactional(readOnly = true)
-    public long countOrders() {
-        return orderRepository.count();
-    }
+
 
 }

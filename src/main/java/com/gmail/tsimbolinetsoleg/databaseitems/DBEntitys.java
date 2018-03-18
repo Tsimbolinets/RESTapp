@@ -1,6 +1,7 @@
-package com.gmail.tsimbolinetsoleg;
+package com.gmail.tsimbolinetsoleg.databaseitems;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.gmail.tsimbolinetsoleg.domain.Contact;
+import com.gmail.tsimbolinetsoleg.domain.Order;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +9,11 @@ import java.util.List;
 public class DBEntitys {
 
     public List<Order> addtoDB() {
-        List<Contact> contact = new ArrayList<Contact>();
-        List<Order> order = new ArrayList<Order>();
+        List<Contact> contact = new ArrayList<>();
+        List<Order> order = new ArrayList<>();
         Contact contact1 = new Contact("Boris", "Oloshkin", "man", "15.10.78", "0935674");
         Order order1 = new Order("18.11.26", "performed", "14673", "CAD", contact1);
-        contact.add(contact1);
+        contact.add(new Contact("Boris", "Oloshkin", "man", "15.10.78", "0935674"));
         order.add(order1);
         contact1 = new Contact("Yulik", "Andreiivsiy", "man", "04.02.91", "7650987");
         order1 = new Order("01.12.25", "overdue", "13884", "USD", contact1);

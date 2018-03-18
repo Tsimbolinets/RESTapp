@@ -58,7 +58,6 @@
         </nav>
     </div>
         <script>
-
             $('#add_contact').click(function(){
                 window.location.href='/contact_add_page';
             });
@@ -76,7 +75,7 @@
                 $.post("/contact/delete", data, function(data, status) {
                     window.location.reload();
                 });
-            });
-        </script>
+            })
+        </script>;
     </body>
 </html>

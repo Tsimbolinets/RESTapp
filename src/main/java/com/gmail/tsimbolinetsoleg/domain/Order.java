@@ -1,4 +1,4 @@
-package com.gmail.tsimbolinetsoleg;
+package com.gmail.tsimbolinetsoleg.domain;
 
 
 import javax.persistence.*;
@@ -43,7 +43,7 @@ public class Order {
         this.status = status;
         this.summ = summ;
         this.currency = currency;
-       this.contact = contact;
+        this.contact = contact;
     }
 
 

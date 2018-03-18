@@ -1,4 +1,4 @@
-package com.gmail.tsimbolinetsoleg;
+package com.gmail.tsimbolinetsoleg.domain;
 
 
 import javax.persistence.*;
